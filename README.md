@@ -5,7 +5,7 @@
 [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/XXXX.XXXXX)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
-LoCoBench-Agent is a comprehensive evaluation framework for assessing LLM agents in realistic, long-context software engineering workflows. Built upon [LoCoBench](https://github.com/salesforce/LoCoBench), it transforms 8,000 static scenarios into interactive multi-turn agent environments.
+LoCoBench-Agent is a comprehensive evaluation framework for assessing LLM agents in realistic, long-context software engineering workflows. Built upon [LoCoBench](https://github.com/SalesforceAIResearch/LoCoBench), it transforms 8,000 static scenarios into interactive multi-turn agent environments.
 
 ## 🌟 Key Features
 
@@ -29,7 +29,7 @@ LoCoBench-Agent is a comprehensive evaluation framework for assessing LLM agents
 ### Installation
 
 ```bash
-git clone https://github.com/salesforce/LoCoBench-Agent.git
+git clone https://github.com/SalesforceAIResearch/LoCoBench-Agent.git
 cd LoCoBench-Agent
 pip install -r requirements.txt
 ```
@@ -38,14 +38,7 @@ pip install -r requirements.txt
 
 ```bash
 # Evaluate a single model
-python run_evaluation.py --model gpt-4 --scenarios data/output/agent_scenarios
-
-# Evaluate with custom configuration
-python run_evaluation.py \
-  --model claude-sonnet-4.5 \
-  --max-turns 50 \
-  --context-limit 200000 \
-  --output results/
+source api.sh && locobench evaluate --mode agent --agent-type openai --model gpt-4.1-mini --scenario-count 30 --context-management adaptive --max-concurrent-scenarios 10 --resume
 ```
 
 
@@ -80,11 +73,11 @@ If you use LoCoBench-Agent in your research, please cite:
 
 ## 🔗 Related Projects
 
-- [LoCoBench](https://github.com/salesforce/LoCoBench) - Long-context code understanding benchmark
+- [LoCoBench](https://github.com/SalesforceAIResearch/LoCoBench) - Long-context code understanding benchmark
 
 ## 📄 License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](https://github.com/SalesforceAIResearch/LoCoBench/blob/main/LICENSE.txt) file for details.
 
 ## 🤝 Contributing
 
