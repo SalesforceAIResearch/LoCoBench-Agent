@@ -1,0 +1,45 @@
+#!/bin/bash
+# LoCoBench API Keys Setup Script - TEMPLATE
+# 🏆 Sets up all API keys for our 3 Elite Models
+
+echo "🚀 Setting up LoCoBench API Keys..."
+echo "🏆 Configuring 3 Elite Models:"
+echo "   ✅ OpenAI o3 (Direct API)"
+echo "   ✅ Claude Sonnet 4 (Bearer Token)"  
+echo "   ✅ Gemini 2.5 Pro (Direct API)"
+echo
+
+# =============================================================================
+# 🏆 ELITE MODEL 1: OpenAI o3 (Direct API or Gateway)
+# =============================================================================
+export OPENAI_API_KEY="your-openai-api-key-here"
+
+# Optional: Use Salesforce Research OpenAI Gateway instead of direct API
+# Uncomment and set this to use the gateway (required after 10/1/2025)
+# export OPENAI_BASE_URL="https://gateway.salesforceresearch.ai/openai/process/v1"
+
+# =============================================================================
+# 🏆 ELITE MODEL 2: Claude Sonnet 4 (Bearer Token Authentication)
+# =============================================================================
+export CLAUDE_BEARER_TOKEN="your-claude-bearer-token"
+
+# =============================================================================
+# 🏆 ELITE MODEL 3: Gemini 2.5 Pro (Direct API)  
+# =============================================================================
+export GEMINI_API_KEY="your-gemini-api-key-here"
+
+# =============================================================================
+# 🎯 Verification & Status
+# =============================================================================
+echo "✅ API Keys configured successfully!"
+echo
+echo "🔧 Verification:"
+echo "   ✅ OpenAI API Key: ${OPENAI_API_KEY:0:15}..."
+echo "   ✅ Claude Bearer Token: ${CLAUDE_BEARER_TOKEN:0:15}..."
+echo "   ✅ Gemini API Key: ${GEMINI_API_KEY:0:15}..."
+echo
+echo "🚀 Ready to use LoCoBench with 3 Elite Models!"
+echo "   Run: locobench status"
+echo "   Run: python test_claude_approaches.py"
+echo "   Run: locobench generate --phase 1"
+echo 
