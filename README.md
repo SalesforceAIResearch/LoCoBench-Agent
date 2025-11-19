@@ -2,7 +2,7 @@
 
 **An Interactive Benchmark for LLM Agents in Long-Context Software Engineering**
 
-[![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/pdf/2511.13998)
+[![Paper](https://img.shields.io/badge/arXiv-2511.13998-b31b1b.svg)](https://arxiv.org/pdf/2511.13998)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 LoCoBench-Agent is a comprehensive evaluation framework for assessing LLM agents in realistic, long-context software engineering workflows. Built upon [LoCoBench](https://github.com/SalesforceAIResearch/LoCoBench), it transforms 8,000 static scenarios into interactive multi-turn agent environments.
