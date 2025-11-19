@@ -2,7 +2,7 @@
 
 **An Interactive Benchmark for LLM Agents in Long-Context Software Engineering**
 
-[![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/XXXX.XXXXX)
+[![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/pdf/2511.13998)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 LoCoBench-Agent is a comprehensive evaluation framework for assessing LLM agents in realistic, long-context software engineering workflows. Built upon [LoCoBench](https://github.com/SalesforceAIResearch/LoCoBench), it transforms 8,000 static scenarios into interactive multi-turn agent environments.
@@ -34,6 +34,41 @@ cd LoCoBench-Agent
 pip install -r requirements.txt
 ```
 
+### Download Evaluation Data
+
+Download the complete evaluation dataset (data.zip):
+
+```bash
+# Download data.zip from Google Drive
+# Visit: https://drive.google.com/file/d/1HwPztd0bipUUi8zs7Pxo3StZCOnJBwVR/view?usp=sharing
+# Or use gdown (install with: pip install gdown)
+gdown https://drive.google.com/uc?id=1HwPztd0bipUUi8zs7Pxo3StZCOnJBwVR
+
+# Extract the data
+unzip data.zip
+
+# This will create the data/ directory with all evaluation scenarios
+```
+
+### Environment Setup
+
+1. **Configure API Keys**
+
+Create an `api.sh` file (gitignored) with your LLM API credentials:
+
+```bash
+# Copy the template
+cp api.sh.template api.sh
+
+# Edit api.sh with your API keys
+export OPENAI_API_KEY="your_openai_key_here"
+export ANTHROPIC_API_KEY="your_anthropic_key_here"
+export GOOGLE_API_KEY="your_google_key_here"
+
+# Source the file
+source api.sh
+```
+
 ### Run Evaluation
 
 ```bash
@@ -63,10 +98,10 @@ source api.sh && locobench evaluate --mode agent --agent-type openai --model gpt
 If you use LoCoBench-Agent in your research, please cite:
 
 ```bibtex
-@article{locobench-agent2025,
+@article{Qiu2025LoCoBenchAgentAI,
   title={LoCoBench-Agent: An Interactive Benchmark for LLM Agents in Long-Context Software Engineering},
   author={Qiu, Jielin and Liu, Zuxin and Liu, Zhiwei and Murthy, Rithesh and Zhang, Jianguo and Chen, Haolin and Wang, Shiyu and Zhu, Ming and Yang, Liangwei and Tan, Juntao and Ram, Roshan and Prabhakar, Akshara and Awalgaonkar, Tulika and Chen, Zixiang and Cen, Zhepeng and Qian, Cheng and Heinecke, Shelby and Yao, Weiran and Savarese, Silvio and Xiong, Caiming and Wang, Huan},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  journal={arXiv preprint arXiv:2511.13998},
   year={2025}
 }
 ```
